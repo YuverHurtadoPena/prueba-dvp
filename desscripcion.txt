@@ -1,0 +1,38 @@
+ Prueba técnica de Angular - API de Rick and Morty
+
+¡Bienvenido al desafío de la prueba técnica de Angular basado en la API de Rick and Morty!
+
+En esta prueba, se te solicita desarrollar una aplicación web utilizando Angular que consuma datos de la famosa serie de televisión “Rick and Morty” proporcionada por la API de Rick and Morty (https://rickandmortyapi.com/).
+
+Requisitos
+
+Tu aplicación debe cumplir con los siguientes requisitos:
+
+1. Pantalla de Personajes: Implementa una pantalla que muestre una lista de personajes de la serie “Rick and Morty”. Cada elemento de la lista debe mostrar la imagen del personaje, su nombre y estado (vivo o muerto). Al hacer clic en un personaje, se debe mostrar una pantalla detallada con más información sobre ese personaje.
+
+2. Pantalla de Lugares: Implementa otra pantalla que muestre una lista de lugares presentes en la serie. Cada elemento de la lista debe mostrar el nombre y tipo del lugar. Al hacer clic en un lugar, se debe mostrar una pantalla detallada con más información sobre ese lugar.
+
+3. Pantalla de Episodios: Implementa una tercera pantalla que muestre una lista de episodios de la serie. Cada elemento de la lista debe mostrar el nombre y número del episodio. Al hacer clic en un episodio, se debe mostrar una pantalla detallada con más información sobre ese episodio.
+
+4. Integración con la API: Debes utilizar la API de Rick and Morty para obtener datos de personajes, lugares y episodios. Asegúrate de manejar adecuadamente las solicitudes a la API y gestionar los errores de manera efectiva.
+
+5. Diseño y Estilo: La aplicación debe tener un diseño atractivo y utilizar estilos consistentes en toda la interfaz. Puedes usar componentes personalizados y estilos CSS para mejorar el aspecto visual de la aplicación.
+
+6. Gestión del Estado: Utiliza un enfoque adecuado para la gestión del estado (NgRx, Redux, etc.) para manejar los datos y la interacción del usuario en la aplicación.
+
+Puntos Opcionales de Bonificación
+
+Si deseas destacarte y obtener puntos adicionales, considera agregar las siguientes características:
+
+- Implementación de Búsqueda: Incluye una función de búsqueda que permita a los usuarios buscar personajes, lugares o episodios específicos por nombre o palabras clave.
+
+- Filtrado y Ordenamiento: Agrega opciones para filtrar y ordenar la lista de personajes, lugares o episodios por diversas categorías, como estado, género, tipo, etc.
+
+- Paginación: Implementa paginación para la lista de personajes, lugares o episodios, para mostrar un cierto número de elementos por página y permitir la carga progresiva de más datos.
+
+Entrega
+
+Una vez que hayas completado el desarrollo de la aplicación, comparte tu proyecto en un repositorio de código (GitHub, GitLab, etc.) y proporciona el enlace para que podamos revisar tu trabajo.
+
+¡Buena suerte y diviértete desarrollando la aplicación de Rick and Morty en Angular! Si tienes alguna pregunta o necesitas más detalles, no dudes en comunicarte con nosotros. Estamos disponibles para ayudarte en cualquier momento. (editado)
+
