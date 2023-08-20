@@ -12,13 +12,15 @@ import { MatIconModule } from "@angular/material/icon";
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CharacterDetailComponent } from './component/character-detail/character-detail.component'
 import { MatDialogModule } from '@angular/material/dialog';
+import { EpisodesListComponent } from './component/episodes-list/episodes-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CharacterListComponent,
-    CharacterDetailComponent
+    CharacterDetailComponent,
+    EpisodesListComponent
   ],
   imports: [
     MatDialogModule,

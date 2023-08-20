@@ -4,8 +4,7 @@ import { CharacterInfo } from 'src/app/dto/character-info';
 import { GeneralInformation } from 'src/app/dto/general-information';
 import { InformationPage } from 'src/app/dto/information-page';
 import { RickAndMartyService } from 'src/app/service/rick-and-marty.service';
-import { Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+
 import {MatDialog} from '@angular/material/dialog';
 import { CharacterDetailComponent } from '../character-detail/character-detail.component';
 
@@ -63,10 +62,10 @@ export class CharacterListComponent implements OnInit {
     }
   }
 
-  openDialog() {
+  openDialog(image:string,name:string, status:string, species:string,gender:string, created:Date) {
     this.dialog.open(CharacterDetailComponent, {
       width: '500px', // Ancho del modal
-      data: { id: 123 } // Datos opcionales para pasar al componente
+      data: { image: image, name:name, status:status, species, gender:gender, created:created } // Datos opcionales para pasar al componente
     });
   }
 

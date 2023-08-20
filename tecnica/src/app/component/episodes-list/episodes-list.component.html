@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<div style="display: grid;place-items: center; width: 100%; overflow: hidden; transform: translateY(20%);">
+  <div class="character-list-container" style="width: 60%;">
+    <table >
+      <thead>
+        <tr>
+          <th>Name Episode</th>
+          <th>Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table-row"
+          *ngFor="let item of informationEpisode; let i = index"
+          [class.highlighted]="i === selectedRowIndex "
+          (mouseenter)="highlightRow(i)"
+          (mouseleave)="unhighlightRow()"
+        >
+          <td>{{ item.name }}</td>
+          <td>{{ item.id }}</td>
+          <td><button class="icon-button"><i class="fa fa-eye"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="button-container">
+    <button (click)="backPage()" class="play-button" *ngIf="currentPage!=1">
+      <i class="fas  fa-undo"></i>
+    </button>
+    <button (click)="nextPage()" class="play-button" *ngIf="currentPage < totalPage">
+      <i class="fas fa-play"></i>
+    </button>
+  </div>
+</div>

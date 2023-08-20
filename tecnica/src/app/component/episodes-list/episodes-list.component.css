@@ -1,0 +1,93 @@
+
+table {
+
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row {
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.table-row:nth-child(even) {
+  background-color: rgb(204, 212, 240);
+}
+
+.highlighted {
+  background-color: #a5bdd7;
+}
+
+/* Estilos para el botón con ícono */
+.icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.icon-button i {
+  color: #007bff;
+  font-size: 18px;
+}
+
+.icon-button:hover i {
+  color: #ff4d4d;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.play-button {
+  margin: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #207cca;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.character-list-container {
+  background-color: rgb(255, 255, 255);
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+
+}
+
+.character-list-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #207cca, white);
+  border-radius: 8px;
+}
+
+.character-list-container::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+
+.character-list-container::-webkit-scrollbar {
+  width: 10px;
+}

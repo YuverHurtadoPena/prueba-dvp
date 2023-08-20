@@ -1,16 +1,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 <div  class="container-character">
+  <h1 class="elegant-title">LIST OF CHARACTERS</h1>
 
-  <div class="search-container" style="margin-top: 100px;">
+  <div class="search-container" style="margin-top: 0px;">
 
-    <input type="text" class="search-input" placeholder="Buscar...">
+    <input type="text" class="search-input" placeholder="Search...">
     <select class="search-select">
-      <option value="0">Filtrar por</option>
-      <option value="1">Todos</option>
-      <option value="2">vivo</option>
-      <option value="3">Desconocido</option>
-      <option value="4">Muerto</option>
+      <option value="0">Filter by..</option>
+      <option value="1">all</option>
+      <option value="2">Alive</option>
+      <option value="3">Unknown</option>
+      <option value="4">Dead</option>
     </select>
 
   </div>
@@ -24,12 +25,12 @@
         <img src="{{item.image}}" alt="" class="imagen">
       </div>
       <div>
-        <strong>Nombre: </strong>
+        <strong>Name: </strong>
         <label for="">{{item.name}}</label><br>
-        <strong>Estado: </strong>
+        <strong>Status: </strong>
         <label for="">{{item.status}}</label><br>
-        <button (click)="openDialog()" class="ver-button" style="width: 100px;">
-          Detalle
+        <button (click)="openDialog(item.image,item.name,item.status,item.species, item.gender, item.created)" class="ver-button" style="width: 100px;">
+          Detail
         </button>
 
       </div>
