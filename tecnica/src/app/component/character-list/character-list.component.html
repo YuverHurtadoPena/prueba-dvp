@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div  class="container-character">
+
+  <div class="search-container" style="margin-top: 100px;">
+
+    <input type="text" class="search-input" placeholder="Buscar...">
+    <select class="search-select">
+      <option value="0">Filtrar por</option>
+      <option value="1">Todos</option>
+      <option value="2">vivo</option>
+      <option value="3">Desconocido</option>
+      <option value="4">Muerto</option>
+    </select>
+
+  </div>
+
+
+  <div class="character-list-container">
+
+    <div *ngFor="let item of listObjectCharacterInfo" class="character">
+
+      <div>
+        <img src="{{item.image}}" alt="" class="imagen">
+      </div>
+      <div>
+        <strong>Nombre: </strong>
+        <label for="">{{item.name}}</label><br>
+        <strong>Estado: </strong>
+        <label for="">{{item.status}}</label><br>
+        <button (click)="openDialog()" class="ver-button" style="width: 100px;">
+          Detalle
+        </button>
+
+      </div>
+      <br>
+    </div>
+  </div>
+  <div class="button-container">
+    <button (click)="backPage()" class="play-button" *ngIf="currentPage!=1">
+      <i class="fas  fa-undo"></i>
+    </button>
+    <button (click)="nextPage()" class="play-button" *ngIf="currentPage < totalPage">
+      <i class="fas fa-play"></i>
+    </button>
+  </div>
+
+
+</div>
