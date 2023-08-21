@@ -2,6 +2,7 @@ import { CharacterListComponent } from './component/character-list/character-lis
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EpisodesListComponent } from './component/episodes-list/episodes-list.component';
+import { PlacesComponent } from './component/places/places.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "episodes",
     component: EpisodesListComponent
+  },
+  {
+    path: "places",
+    component: PlacesComponent
   },
 
 ];

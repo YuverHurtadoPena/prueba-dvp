@@ -1,0 +1,36 @@
+.contenedor {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+}
+
+.boton {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton-cerrar {
+  background-color: #e74c3c;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px; /* Espacio entre los botones */
+  transition: background-color 0.3s;
+}
+
+.boton-cerrar:hover {
+  background-color: #c0392b;
+}
+strong{
+  color: #207cca;
+}
+

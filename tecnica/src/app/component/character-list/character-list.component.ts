@@ -64,8 +64,8 @@ export class CharacterListComponent implements OnInit {
 
   openDialog(image:string,name:string, status:string, species:string,gender:string, created:Date) {
     this.dialog.open(CharacterDetailComponent, {
-      width: '500px', // Ancho del modal
-      data: { image: image, name:name, status:status, species, gender:gender, created:created } // Datos opcionales para pasar al componente
+      width: '500px',
+      data: { image: image, name:name, status:status, species, gender:gender, created:created }
     });
   }
 

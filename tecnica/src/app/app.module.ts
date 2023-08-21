@@ -13,6 +13,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { CharacterDetailComponent } from './component/character-detail/character-detail.component'
 import { MatDialogModule } from '@angular/material/dialog';
 import { EpisodesListComponent } from './component/episodes-list/episodes-list.component';
+import { EpisodesDetailComponent } from './component/episodes-detail/episodes-detail.component';
+import { PlacesComponent } from './component/places/places.component';
+import { LocationDetailComponent } from './component/location-detail/location-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { EpisodesListComponent } from './component/episodes-list/episodes-list.c
     HeaderComponent,
     CharacterListComponent,
     CharacterDetailComponent,
-    EpisodesListComponent
+    EpisodesListComponent,
+    EpisodesDetailComponent,
+    PlacesComponent,
+    LocationDetailComponent
   ],
   imports: [
     MatDialogModule,

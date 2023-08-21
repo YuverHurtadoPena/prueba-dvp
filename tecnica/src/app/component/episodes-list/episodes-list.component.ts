@@ -1,8 +1,9 @@
+import { EpisodesDetailComponent } from './../episodes-detail/episodes-detail.component';
 import { Component, OnInit } from '@angular/core';
 import { InformationEpisode } from 'src/app/dto/information-episode';
 import { InformationGeneralEpisode } from 'src/app/dto/information-general-episode';
 import { RickAndMartyService } from 'src/app/service/rick-and-marty.service';
-
+import {MatDialog} from '@angular/material/dialog';
 @Component({
   selector: 'app-episodes-list',
   templateUrl: './episodes-list.component.html',
@@ -15,7 +16,7 @@ export class EpisodesListComponent implements OnInit {
   private service:RickAndMartyService;
   informationGeneralEpisode!: InformationGeneralEpisode;
   informationEpisode:InformationEpisode[]=[];
-  constructor(service: RickAndMartyService) {
+  constructor(service: RickAndMartyService, private dialog: MatDialog) {
     this.service = service;
    }
 
@@ -62,6 +63,14 @@ export class EpisodesListComponent implements OnInit {
       this. getAllEpisode(this.currentPage);
 
     }
+  }
+
+
+  openDialog(name:string, id:number, air_date:string, episode:string) {
+    this.dialog.open(EpisodesDetailComponent, {
+      width: '500px',
+      data: { name:name, id:id,air_date:air_date, episode:episode}
+    });
   }
 
 }

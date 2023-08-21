@@ -2,28 +2,28 @@
 
 
 <div style="display: grid;place-items: center; width: 100%; overflow: hidden;margin-top: 10PX;">
-  <h1 class="elegant-title">LIST OF EPISODES</h1>
+  <h1 class="elegant-title">LIST OF LOCATIONS</h1>
 
   <div class="character-list-container" style="width: 60%;">
     <table >
       <thead>
         <tr>
-          <th>Name Episode</th>
-          <th>Number</th>
+          <th>Location</th>
+          <th>Type</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr
           class="table-row"
-          *ngFor="let item of informationEpisode; let i = index"
+          *ngFor="let item of location; let i = index"
           [class.highlighted]="i === selectedRowIndex "
           (mouseenter)="highlightRow(i)"
           (mouseleave)="unhighlightRow()"
         >
           <td>{{ item.name }}</td>
-          <td>{{ item.id }}</td>
-          <td><button class="icon-button" (click)="openDialog(item.name, item.id, item.air_date,item.episode)"><i class="fa fa-eye"></i></button></td>
+          <td>{{ item.type }}</td>
+          <td><button class="icon-button" (click)="openDialog(item.name,item.type, item.dimension, item.created)"><i class="fa fa-eye"></i></button></td>
         </tr>
       </tbody>
     </table>
