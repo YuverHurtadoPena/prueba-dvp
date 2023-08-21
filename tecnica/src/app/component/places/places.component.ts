@@ -14,6 +14,7 @@ export class PlacesComponent implements OnInit {
   private service:RickAndMartyService;
   totalPage:number = 0;
   currentPage:number=1;
+  searchTerm = '';
 
   generalLocation!:GeneralLocation;
   location: PlaceLocation []=[];
@@ -35,6 +36,21 @@ export class PlacesComponent implements OnInit {
 
   unhighlightRow(): void {
     this.selectedRowIndex = null;
+  }
+
+  getByName(){
+    this.location =[];
+    this.service.getLocationList("https://rickandmortyapi.com/api/location/?page=1&name="+this.searchTerm).subscribe(
+    {
+      next:(info)=>{
+        this.generalLocation = info;
+        this.totalPage = info.info.pages;
+        this.location= info.results;
+        console.log(info)
+
+      }
+    });
+
   }
 
 
@@ -68,10 +84,10 @@ export class PlacesComponent implements OnInit {
     }
   }
 
-  openDialog(name:string,type:string, dimension:string,created:Date) {
+  openDialog(name:string,type:string, dimension:string,created:Date,resident:string[]) {
     this.dialog.open(LocationDetailComponent, {
       width: '500px',
-      data: {name:name,type:type,dimension:dimension,created:created }
+      data: {name:name,type:type,dimension:dimension,created:created,resident:resident }
     });
   }
 

@@ -2,8 +2,9 @@
 
 
 <div style="display: grid;place-items: center; width: 100%; overflow: hidden;margin-top: 10PX;">
-  <h1 class="elegant-title">LIST OF EPISODES</h1>
 
+  <h1 class="elegant-title">LIST OF EPISODES</h1>
+<input type="text" class="search-input" placeholder="Search by name episode..." [(ngModel)]="searchTerm" (ngModelChange)="getByName()">
   <div class="character-list-container" style="width: 60%;">
     <table >
       <thead>

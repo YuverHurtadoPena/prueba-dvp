@@ -1,3 +1,5 @@
+import { OriginCharacter } from "./origin-character";
+
 export interface CharacterInfo {
   id:number,
   name:string,
@@ -5,5 +7,6 @@ export interface CharacterInfo {
   image:string,
   species:string,
   gender:string,
-  created:Date
+  created:Date,
+  origin:OriginCharacter
 }

@@ -12,6 +12,8 @@ import {MatDialog} from '@angular/material/dialog';
 export class EpisodesListComponent implements OnInit {
   totalPage:number = 0;
   currentPage:number=1;
+  searchTerm = '';
+
 
   private service:RickAndMartyService;
   informationGeneralEpisode!: InformationGeneralEpisode;
@@ -44,6 +46,20 @@ export class EpisodesListComponent implements OnInit {
         this.informationEpisode= info.results;
         console.log(info)
 
+      }
+    });
+
+  }
+
+  getByName(){
+
+    this.service.getEpisodeList("https://rickandmortyapi.com/api/episode/?page=1&name="+this.searchTerm).subscribe(
+    {
+      next:(info)=>{
+        this.informationGeneralEpisode = info;
+        this.totalPage = info.info.pages;
+        this.informationEpisode= info.results;
+        console.log(info)
       }
     });
 

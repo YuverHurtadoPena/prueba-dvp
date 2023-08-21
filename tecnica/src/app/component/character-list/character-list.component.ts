@@ -52,25 +52,45 @@ export class CharacterListComponent implements OnInit {
 
 
   backPage(){
+    const lastSearch = localStorage.getItem('lastSearch');
+    if (lastSearch==null){
+      this.selectedStatus == "all";
+    }else{
+      this.selectedStatus =lastSearch;
+    }
     if(this.currentPage != 1){
       this.currentPage = this.currentPage - 1;
-      this.getCharacter(this.currentPage);
+       if(lastSearch == "all"){
+        this.getCharacter(this.currentPage);
+      }else{
+        this.getCharactersByStatus(this.selectedStatus ,this.currentPage);
+      }
 
     }
 
   }
   nextPage(){
+    const lastSearch = localStorage.getItem('lastSearch');
+    if (lastSearch==null){
+      this.selectedStatus == "all";
+    }else{
+      this.selectedStatus =lastSearch;
+    }
     if(this.currentPage < this.totalPage){
       this.currentPage = this.currentPage + 1;
-      this.getCharacter(this.currentPage);
+      if(lastSearch == "all"){
+        this.getCharacter(this.currentPage);
+      }else{
+        this.getCharactersByStatus(this.selectedStatus ,this.currentPage);
+      }
 
     }
   }
 
-  openDialog(image:string,name:string, status:string, species:string,gender:string, created:Date) {
+  openDialog(image:string,name:string, status:string, species:string,gender:string, created:Date, location:string) {
     this.dialog.open(CharacterDetailComponent, {
       width: '500px',
-      data: { image: image, name:name, status:status, species, gender:gender, created:created }
+      data: { image: image, name:name, status:status, species, gender:gender, created:created,location:location }
     });
   }
 
@@ -93,9 +113,9 @@ export class CharacterListComponent implements OnInit {
 
   }
 
-  getCharactersByStatus(status: string) {
+  getCharactersByStatus(status: string,page:number) {
     this.listObjectCharacterInfo = [];
-    this.service.getChararcterList(`https://rickandmortyapi.com/api/character/?page=1&status=${status}`).subscribe(
+    this.service.getChararcterList("https://rickandmortyapi.com/api/character/?page="+page+"&status="+status).subscribe(
     {
       next: (info) => {
         this.generalInfo = info;
@@ -106,16 +126,17 @@ export class CharacterListComponent implements OnInit {
   }
 
 
-  filter(){
-    const lastSearch = localStorage.getItem('lastSearch');
-    if (lastSearch == "all"){
 
-    }
-  }
 
   onStatusChange(status: string) {
+    this.currentPage = 1;
 
-      this.getCharactersByStatus(status); // Filtrar por estado
+      localStorage.setItem('lastSearch', status);
+       if(status == "all"){
+        this.getCharacter(this.currentPage);
+       }else{
+        this.getCharactersByStatus(status,this.currentPage)
+       }
 
   }
 

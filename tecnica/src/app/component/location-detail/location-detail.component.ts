@@ -11,6 +11,7 @@ export class LocationDetailComponent implements OnInit {
   type!:string;
   dimension!:string;
   created!:Date;
+  resident!:string[];
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class LocationDetailComponent implements OnInit {
     this.created = this.data.created;
     this.dimension = this.data.dimension;
     this.type = this.data.type;
+    this.resident = this.data.resident;
   }
 
 }

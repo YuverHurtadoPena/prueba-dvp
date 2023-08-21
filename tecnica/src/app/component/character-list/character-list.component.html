@@ -5,7 +5,7 @@
 
   <div class="search-container" style="margin-top: 0px;">
 
-    <input type="text" class="search-input" placeholder="Search..." [(ngModel)]="searchTerm" (ngModelChange)="getByName()">
+    <input type="text" class="search-input" placeholder="Search by name..." [(ngModel)]="searchTerm" (ngModelChange)="getByName()">
     <select class="search-select" [(ngModel)]="selectedStatus" (ngModelChange)="onStatusChange(selectedStatus)">
 
         <option value="all">All</option>
@@ -30,7 +30,7 @@
         <label for="">{{item.name}}</label><br>
         <strong>Status: </strong>
         <label for="">{{item.status}}</label><br>
-        <button (click)="openDialog(item.image,item.name,item.status,item.species, item.gender, item.created)" class="ver-button" style="width: 100px;">
+        <button (click)="openDialog(item.image,item.name,item.status,item.species, item.gender, item.created,item.origin.name)" class="ver-button" style="width: 100px;">
           Detail
         </button>
 

@@ -3,7 +3,7 @@
 
 <div style="display: grid;place-items: center; width: 100%; overflow: hidden;margin-top: 10PX;">
   <h1 class="elegant-title">LIST OF LOCATIONS</h1>
-
+  <input type="text" class="search-input" placeholder="Search by location..." [(ngModel)]="searchTerm" (ngModelChange)="getByName()">
   <div class="character-list-container" style="width: 60%;">
     <table >
       <thead>
@@ -23,7 +23,7 @@
         >
           <td>{{ item.name }}</td>
           <td>{{ item.type }}</td>
-          <td><button class="icon-button" (click)="openDialog(item.name,item.type, item.dimension, item.created)"><i class="fa fa-eye"></i></button></td>
+          <td><button class="icon-button" (click)="openDialog(item.name,item.type, item.dimension, item.created,item.residents)"><i class="fa fa-eye"></i></button></td>
         </tr>
       </tbody>
     </table>

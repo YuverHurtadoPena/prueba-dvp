@@ -16,6 +16,7 @@ import { EpisodesListComponent } from './component/episodes-list/episodes-list.c
 import { EpisodesDetailComponent } from './component/episodes-detail/episodes-detail.component';
 import { PlacesComponent } from './component/places/places.component';
 import { LocationDetailComponent } from './component/location-detail/location-detail.component';
+import { ResidentsComponent } from './component/residents/residents.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LocationDetailComponent } from './component/location-detail/location-de
     EpisodesListComponent,
     EpisodesDetailComponent,
     PlacesComponent,
-    LocationDetailComponent
+    LocationDetailComponent,
+    ResidentsComponent
   ],
   imports: [
     MatDialogModule,
