@@ -14,6 +14,7 @@ export class CharacterDetailComponent implements OnInit {
   gender:string = "";
   created!: Date;
   location = "";
+  origin = "";
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
@@ -25,6 +26,7 @@ export class CharacterDetailComponent implements OnInit {
     this.gender = this.data.gender;
     this.created = this.data.created;
     this.location = this.data.location;
+    this.origin = this.data.origin;
   }
 
 }

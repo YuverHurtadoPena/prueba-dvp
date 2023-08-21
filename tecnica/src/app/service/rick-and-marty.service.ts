@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { GeneralInformation } from '../dto/general-information';
 import { InformationGeneralEpisode } from '../dto/information-general-episode';
 import { GeneralLocation } from '../dto/general-location';
+import { CharacterInfo } from '../dto/character-info';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,6 +35,14 @@ export class RickAndMartyService {
 
   getLocationList(url:string): Observable<GeneralLocation> {
     return this.httpClient.get<GeneralLocation>(
+      `${url}`
+    );
+
+  }
+
+
+  geCharacterOne(url:string): Observable<CharacterInfo> {
+    return this.httpClient.get<CharacterInfo>(
       `${url}`
     );
 

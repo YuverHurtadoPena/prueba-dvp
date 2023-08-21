@@ -1,6 +1,7 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-
+import {MatDialog} from '@angular/material/dialog';
+import { ResidentsComponent } from '../residents/residents.component';
 @Component({
   selector: 'app-location-detail',
   templateUrl: './location-detail.component.html',
@@ -12,7 +13,7 @@ export class LocationDetailComponent implements OnInit {
   dimension!:string;
   created!:Date;
   resident!:string[];
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.name = this.data.name;
@@ -21,5 +22,12 @@ export class LocationDetailComponent implements OnInit {
     this.type = this.data.type;
     this.resident = this.data.resident;
   }
+  openDialog( ) {
+    this.dialog.open(ResidentsComponent, {
+      width: '500px',height:'80%',
+      data: {residents:this.resident  }
+    });
+  }
+
 
 }

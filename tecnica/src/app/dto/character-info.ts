@@ -8,5 +8,6 @@ export interface CharacterInfo {
   species:string,
   gender:string,
   created:Date,
+  location:OriginCharacter,
   origin:OriginCharacter
 }

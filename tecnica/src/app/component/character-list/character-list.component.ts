@@ -4,7 +4,7 @@ import { CharacterInfo } from 'src/app/dto/character-info';
 import { GeneralInformation } from 'src/app/dto/general-information';
 import { InformationPage } from 'src/app/dto/information-page';
 import { RickAndMartyService } from 'src/app/service/rick-and-marty.service';
-
+import Swal from 'sweetalert2';
 import {MatDialog} from '@angular/material/dialog';
 import { CharacterDetailComponent } from '../character-detail/character-detail.component';
 
@@ -42,8 +42,16 @@ export class CharacterListComponent implements OnInit {
         this.generalInfo = info;
         this.totalPage = info.info.pages;
         this.listObjectCharacterInfo = info.results;
-        console.log(info)
 
+
+      },
+      error:()=>{
+        Swal.fire({
+          title: 'Error',
+          text: 'An error has occurred in the operation.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
       }
     });
 
@@ -87,10 +95,10 @@ export class CharacterListComponent implements OnInit {
     }
   }
 
-  openDialog(image:string,name:string, status:string, species:string,gender:string, created:Date, location:string) {
+  openDialog(image:string,name:string, status:string, species:string,gender:string, created:Date, location:string,origin:string) {
     this.dialog.open(CharacterDetailComponent, {
       width: '500px',
-      data: { image: image, name:name, status:status, species, gender:gender, created:created,location:location }
+      data: { image: image, name:name, status:status, species, gender:gender, created:created,location:location,origin:origin }
     });
   }
 
@@ -106,7 +114,7 @@ export class CharacterListComponent implements OnInit {
         this.totalPage = info.info.pages;
 
         this.listObjectCharacterInfo = uniqueCharacters;
-        console.log(info)
+
 
       }
     });
@@ -114,13 +122,25 @@ export class CharacterListComponent implements OnInit {
   }
 
   getCharactersByStatus(status: string,page:number) {
+
     this.listObjectCharacterInfo = [];
     this.service.getChararcterList("https://rickandmortyapi.com/api/character/?page="+page+"&status="+status).subscribe(
     {
       next: (info) => {
+        // Dentro de algún método o evento en tu componente
+
+
         this.generalInfo = info;
         this.totalPage = info.info.pages;
         this.listObjectCharacterInfo = info.results;
+      },
+      error:()=>{
+        Swal.fire({
+          title: 'Error',
+          text: 'An error has occurred in the operation.',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
       }
     });
   }
