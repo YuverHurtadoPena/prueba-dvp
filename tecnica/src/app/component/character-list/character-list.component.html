@@ -5,13 +5,14 @@
 
   <div class="search-container" style="margin-top: 0px;">
 
-    <input type="text" class="search-input" placeholder="Search...">
-    <select class="search-select">
-      <option value="0">Filter by..</option>
-      <option value="1">all</option>
-      <option value="2">Alive</option>
-      <option value="3">Unknown</option>
-      <option value="4">Dead</option>
+    <input type="text" class="search-input" placeholder="Search..." [(ngModel)]="searchTerm" (ngModelChange)="getByName()">
+    <select class="search-select" [(ngModel)]="selectedStatus" (ngModelChange)="onStatusChange(selectedStatus)">
+
+        <option value="all">All</option>
+        <option value="alive">Alive</option>
+        <option value="dead">Dead</option>
+        <option value="unknown">Unknown</option>
+
     </select>
 
   </div>
